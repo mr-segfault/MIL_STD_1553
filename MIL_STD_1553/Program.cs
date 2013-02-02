@@ -40,13 +40,13 @@ namespace MIL_STD_1553
                 if (address == 0x1f)
                     address_typ = " BROADCAST";
                 if (tr == 1)
-                    Console.WriteLine("\nThis is a" + address_typ + " TRANSMIT-type message\n");
+                    Console.WriteLine("\nThis is a TRANSMIT{0} message addressed to 0x{1:X2}\n", address_typ, address);
                 else
-                    Console.WriteLine("\nThis is a" + address_typ + " RECEIVE-type message\n");
+                    Console.WriteLine("\nThis is a RECEIVE{0} message addressed to 0x{1:X2}\n", address_typ, address);
 
                 if ((sub_address_mc == 0xff) || (sub_address_mc == 0x00))
                 {
-                    Console.WriteLine("\nThis is a Mode Code Command\n");
+                    Console.WriteLine("\nThis frame contains a Mode Code Command\n");
                     Console.WriteLine("\nMode Code to be performed: " + wc_mc);
                 }
 
@@ -76,6 +76,7 @@ namespace MIL_STD_1553
                 Console.WriteLine(dat_frame);
                 Console.WriteLine("Placing message on the bus with message ID: " + Program._ctr);
                 Console.WriteLine("\nDATA WORD BEING SENT ONTO FILE MEDIA...\n");
+                Console.WriteLine("\nDATA: {0} PARITY: {1}\n", data, par);
 
                 System.IO.File.AppendAllText(@"milbus.dat", dat_frame);
 
@@ -91,10 +92,18 @@ namespace MIL_STD_1553
                 Program._ctr++;
 
             }
-            //            if (msg_type == STATUS_TYPE)
-            //            {
-            //
-            //            }
+                        if (msg_type == STATUS_TYPE)
+                        {
+                            string status_frame = "PPP" + Convert.ToString(address, 2).PadLeft(5, '0') + Convert.ToString(message_error, 2) + Convert.ToString(instrumentation, 2) + Convert.ToString(service_request, 2) + "000" + Convert.ToString(broadcast_cmd_reserved, 2) + Convert.ToString(busy, 2) + Convert.ToString(subsystem_flag, 2) + Convert.ToString(dynamic_bus_acceptance, 2) + Convert.ToString(terminal_flag, 2) + Convert.ToString(par, 2);
+                            Console.WriteLine(status_frame);
+                            Console.WriteLine("Placing message on the bus with message ID: " + Program._ctr);
+                            Console.WriteLine("\nSTATUS WORD BEING SENT ONTO FILE MEDIA...\n");
+                            System.IO.File.AppendAllText(@"milbus.dat", status_frame);
+                            Console.WriteLine("DEBUG output: \nis_status: " + is_status + ", message_error: " + message_error + ", instrumentation: " + instrumentation + ", service_request: " + service_request + ", broadcast_cmd_reserved " + broadcast_cmd_reserved + ", busy: " + busy + ", subsystem_flag: " + subsystem_flag + ", dynamic_bus_acceptance: " + dynamic_bus_acceptance + ", terminal_flag: " + terminal_flag + ", address: " + address + ", tr: " + tr + ", sub_address_mc: " + sub_address_mc + ", wc_mc: " + wc_mc + ", par: " + par + ", data: " + data + ", end_of_messages: " + end_of_messages + ", msg_type: " + msg_type + "\n");
+                            Console.WriteLine("===================================================");
+                            Program._ctr++;
+
+                        }
 
             return _ctr;
         }
