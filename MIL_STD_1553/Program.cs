@@ -23,7 +23,6 @@ namespace MIL_STD_1553
             if (msg_type == COMMAND_TYPE)
             {
                 string cmd_frame = "PPP" + Convert.ToString(address, 2).PadLeft(5, '0') + Convert.ToString(Convert.ToInt32(tr), 2) + Convert.ToString(sub_address_mc, 2).PadLeft(5, '0') + Convert.ToString(wc_mc, 2).PadLeft(5, '0') + Convert.ToString(Convert.ToInt32(par), 2);
-                System.IO.File.AppendAllText(@"milbus.dat", cmd_frame);
                 Console.WriteLine("===================================================");
                 Console.WriteLine(cmd_frame);
 
