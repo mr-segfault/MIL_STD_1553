@@ -23,7 +23,7 @@ namespace MIL_STD_1553
             if (msg_type == COMMAND_TYPE)
             {
                 string cmd_frame = "PPP" + Convert.ToString(address, 2).PadLeft(5, '0') + Convert.ToString(Convert.ToInt32(tr), 2) + Convert.ToString(sub_address_mc, 2).PadLeft(5, '0') + Convert.ToString(wc_mc, 2).PadLeft(5, '0') + Convert.ToString(Convert.ToInt32(par), 2);
-                System.IO.File.AppendAllText(@"C:\Users\Michael\milbus.dat", cmd_frame);
+                System.IO.File.AppendAllText(@"milbus.dat", cmd_frame);
                 Console.WriteLine("===================================================");
                 Console.WriteLine(cmd_frame);
 
@@ -74,7 +74,7 @@ namespace MIL_STD_1553
                     par = 0;
                 string dat_frame = "PPP" + data_str + par;
                 Console.WriteLine(dat_frame);
-                System.IO.File.AppendAllText(@"C:\Users\Michael\milbus.dat", dat_frame);
+                System.IO.File.AppendAllText(@"milbus.dat", dat_frame);
                 Console.WriteLine("Placing message on the bus with message ID: " + Program._ctr);
                 Console.WriteLine("\nDATA WORD BEING SENT ONTO VIRTUAL MEDIA...\n");
 
