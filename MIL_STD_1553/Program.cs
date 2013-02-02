@@ -74,9 +74,10 @@ namespace MIL_STD_1553
                     par = 0;
                 string dat_frame = "PPP" + data_str + par;
                 Console.WriteLine(dat_frame);
-                System.IO.File.AppendAllText(@"milbus.dat", dat_frame);
                 Console.WriteLine("Placing message on the bus with message ID: " + Program._ctr);
                 Console.WriteLine("\nDATA WORD BEING SENT ONTO VIRTUAL MEDIA...\n");
+
+                System.IO.File.AppendAllText(@"milbus.dat", dat_frame);
 
                 //                    int NumberChars = 8;
                 //                    byte[] bytes = new byte[NumberChars / 2];
