@@ -33,7 +33,7 @@ namespace MIL_STD_1553
                 if (address > 0x1F)
                     Console.WriteLine("\nError: Invalid frame!: Invalid address!\n");
                 if ((address == 0x1F) && (tr == 1))
-                    Console.WriteLine("\nError: Invalid frame!: Broadcast frames can't be x-mit\n");
+                    Console.WriteLine("\nError: Invalid frame!: Broadcast frames are not commanded to x-mit on RT\n");
                 string address_typ = "";
                 //	fwrite(x, sizeof(x[0]), sizeof(x)/sizeof(x[0]), fp);
                 Console.WriteLine("DEBUG output: \nis_status: " + is_status + ", message_error: " + message_error + ", instrumentation: " + instrumentation + ", service_request: " + service_request + ", broadcast_cmd_reserved " + broadcast_cmd_reserved + ", busy: " + busy + ", subsystem_flag: " + subsystem_flag + ", dynamic_bus_acceptance: " + dynamic_bus_acceptance + ", terminal_flag: " + terminal_flag + ", address: " + address + ", tr: " + tr + ", sub_address_mc: " + sub_address_mc + ", wc_mc: " + wc_mc + ", par: " + par + ", data: " + data + ", end_of_messages: " + end_of_messages + ", msg_type: " + msg_type + "\n");
@@ -75,7 +75,7 @@ namespace MIL_STD_1553
                 string dat_frame = "PPP" + data_str + par;
                 Console.WriteLine(dat_frame);
                 Console.WriteLine("Placing message on the bus with message ID: " + Program._ctr);
-                Console.WriteLine("\nDATA WORD BEING SENT ONTO VIRTUAL MEDIA...\n");
+                Console.WriteLine("\nDATA WORD BEING SENT ONTO FILE MEDIA...\n");
 
                 System.IO.File.AppendAllText(@"milbus.dat", dat_frame);
 
