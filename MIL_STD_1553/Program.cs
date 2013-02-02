@@ -29,7 +29,8 @@ namespace MIL_STD_1553
 
                 Console.WriteLine("Placing message on the bus with message ID: " + Program._ctr);
 
-                Console.WriteLine("\nCOMMAND WORD BEING SENT ONTO VIRTUAL MEDIA...\n");
+                Console.WriteLine("\nCOMMAND WORD BEING SENT ONTO FILE MEDIA...\n");
+                System.IO.File.AppendAllText(@"milbus.dat", cmd_frame);
                 if (address > 0x1F)
                     Console.WriteLine("\nError: Invalid frame!: Invalid address!\n");
                 if ((address == 0x1F) && (tr == 1))
