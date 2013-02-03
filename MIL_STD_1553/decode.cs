@@ -21,7 +21,7 @@ namespace MIL_STD_1553
             int sub_address_mc = Convert.ToInt32(suba_mc_str, 2);
 
 
-            string string_wcmc_arr = frame.Substring(3, 5);
+            string string_wcmc_arr = frame.Substring(14, 5);
             int wc_mc = Convert.ToInt32(string_wcmc_arr, 2);
 
             string parity_str = frame.Substring(19, 1);
