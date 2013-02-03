@@ -28,8 +28,8 @@ namespace MIL_STD_1553
 
             else
             {
-                Console.WriteLine("(MIL-STD-1553) This frame is addressed to a component within the subsystem\n");
-                Console.WriteLine("(MIL-STD-1553) Address: " + sub_address_mc);
+                Console.WriteLine("(MIL-STD-1553) This frame is addressed to a component within a subsystem\n");
+                Console.WriteLine("(MIL-STD-1553) Subsystem Address: " + sub_address_mc);
                 MIL_STD_1760E.nuclearwpns_address(sub_address_mc);
                 Console.WriteLine("(MIL-STD-1553) Or, it indicates the subsequent transmittal of {0} data words.\n", wc_mc);
             }
