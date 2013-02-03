@@ -10,6 +10,11 @@ namespace MIL_STD_1553
     {
         public static int cmdword_decode(string frame)
         {
+            if (frame.Length != 20)
+            {
+                Console.WriteLine("Error: Invalid frame length!");
+                return 1;
+            }
             string address  = frame.Substring(3, 5);
             int addy = Convert.ToInt32(address, 2);
 
