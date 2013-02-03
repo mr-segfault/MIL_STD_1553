@@ -15,6 +15,8 @@ namespace MIL_STD_1553
         int par = chk_valid.parity(cmd_word);
         cmd_word += Convert.ToString(Convert.ToInt32(par), 2);
         string cmd_frame = "PPP" + cmd_word;
+        Console.WriteLine("PARITY = " + par);
+
         return cmd_frame;
         }
     }

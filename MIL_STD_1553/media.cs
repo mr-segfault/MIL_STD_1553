@@ -12,8 +12,7 @@ namespace MIL_STD_1553
 
         public static int send_onto_media(string frame)
         {
-            Console.WriteLine("Placing message on the bus with message ID: " + media._ctr);
-            Console.WriteLine("WORD BEING SENT ONTO FILE MEDIA...");
+            Console.WriteLine("message ID: " + media._ctr);
             System.IO.File.AppendAllText(@"milbus.dat", frame);
             media._ctr++;
             return 0;

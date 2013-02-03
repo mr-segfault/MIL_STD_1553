@@ -46,8 +46,9 @@
     <Compile Include="cmd_word.cs" />
     <Compile Include="data_word.cs" />
     <Compile Include="decode.cs" />
-    <Compile Include="media.cs" />
     <Compile Include="encode.cs" />
+    <Compile Include="media.cs" />
+    <Compile Include="main.cs" />
     <Compile Include="MIL-STD-1760E.cs" />
     <Compile Include="mode_code.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
