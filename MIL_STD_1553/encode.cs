@@ -55,7 +55,6 @@ namespace MIL_STD_1553
                             string status_word_binary = status_word.frame_status_word(address, message_error, instrumentation, service_request, broadcast_cmd_received, busy, subsystem_flag, dynamic_bus_acceptance, terminal_flag);
                             Console.WriteLine(status_word_binary);
                             media.send_onto_media(status_word_binary);
-                            Console.WriteLine("Placing message on the bus with message ID: " + encode._ctr);
                             Console.WriteLine("DEBUG output: \nis_status: " + is_status + ", message_error: " + message_error + ", instrumentation: " + instrumentation + ", service_request: " + service_request + ", broadcast_cmd_reserved " + broadcast_cmd_received + ", busy: " + busy + ", subsystem_flag: " + subsystem_flag + ", dynamic_bus_acceptance: " + dynamic_bus_acceptance + ", terminal_flag: " + terminal_flag + ", address: " + address + ", tr: " + tr + ", sub_address_mc: " + sub_address_mc + ", wc_mc: " + wc_mc + ", par: " + par + ", data: " + data + ", end_of_messages: " + end_of_messages + ", msg_type: " + msg_type + "\n");
                             Console.WriteLine("===================================================");
                             encode._ctr++;
