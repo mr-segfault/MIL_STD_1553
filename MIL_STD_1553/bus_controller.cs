@@ -14,23 +14,24 @@ namespace MIL_STD_1553
             if (address == 0x1f)
                 address_typ = " BROADCAST";
             if (tr == 1)
-                Console.WriteLine("\nThis is a TRANSMIT{0} message addressed to 0x{1:X2}\n", address_typ, address);
+                Console.WriteLine("(MIL-STD-1553) This is a TRANSMIT{0} message addressed to 0x{1:X2}\n", address_typ, address);
             else
-                Console.WriteLine("\nThis is a RECEIVE{0} message addressed to 0x{1:X2}\n", address_typ, address);
+                Console.WriteLine("(MIL-STD-1553) This is a RECEIVE{0} message addressed to 0x{1:X2}", address_typ, address);
 
             if ((sub_address_mc == 0x1f) || (sub_address_mc == 0x00))
             {
-                Console.WriteLine("\nThis frame contains a Mode Code Command\n");
-                Console.WriteLine("\nMode Code to be performed: " + wc_mc);
+                Console.WriteLine("(MIL-STD-1553) This frame contains a Mode Code Command");
+                Console.WriteLine("(MIL-STD-1553) Mode Code to be performed: " + wc_mc);
                 Console.WriteLine(mode_code.mode_code_typ(wc_mc));
                 mode_code.mode_code_typ(wc_mc);
             }
 
             else
             {
-                Console.WriteLine("\nThis frame is addressed to a component within the subsystem\n");
-                Console.WriteLine("Address: " + sub_address_mc);
-                Console.WriteLine("Or, it indicates the subsequent transmittal of {0} data words.\n", wc_mc);
+                Console.WriteLine("(MIL-STD-1553) This frame is addressed to a component within the subsystem\n");
+                Console.WriteLine("(MIL-STD-1553) Address: " + sub_address_mc);
+                MIL_STD_1760E.nuclearwpns_address(sub_address_mc);
+                Console.WriteLine("(MIL-STD-1553) Or, it indicates the subsequent transmittal of {0} data words.\n", wc_mc);
             }
             return 0;
         }

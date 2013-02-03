@@ -13,8 +13,13 @@ namespace MIL_STD_1553
             int par_ctr = 0;
             int par=0;
             for (int i = 0; i < message.Length; i++)
-                if (message[i] == 1)
+            {
+                // ASCII "1" is '49'
+                if (message[i] == 49)
+                {
                     par_ctr++;
+                }
+            }
             if (par_ctr % 2 == 1)
                 par = 1;
             return par;

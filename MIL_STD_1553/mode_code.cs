@@ -110,7 +110,7 @@ namespace MIL_STD_1553
                     mode_desc = "RESERVED";
                     break;
                 default:
-                    Console.WriteLine("DEBUG: Bits 10 through 14 not a mode code. Expect {0} sebsequent data words\n", mode_code);
+                    Console.WriteLine("(MIL-STD-1553) DEBUG: Bits 10 through 14 not a mode code. Expect {0} sebsequent data words\n", mode_code);
                     break;
             }
             return mode_desc;
