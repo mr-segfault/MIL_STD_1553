@@ -13,70 +13,70 @@ namespace MIL_STD_1553
             string mode_desc = "";
             switch (mode_code)
             {
-                case 0:
+                case (0):
                     mode_desc = "Dynamic bus control";
                     break;
-                case 1:
+                case (1):
                     mode_desc = "Synchronize";
                     break;
-                case 2:
+                case (2):
                     mode_desc = "Transmit status word";
                     break;
-                case 3:
+                case (3):
                     mode_desc = "Initiate self-test";
                     break;
-                case 4:
+                case (4):
                     mode_desc = "Transmitter shutdown";
                     break;
-                case 5:
+                case (5):
                     mode_desc = "Override transmitter shutdown";
                     break;
-                case 6:
+                case (6):
                     mode_desc = "Inhibit terminal flag bit";
                     break;
-                case 7:
+                case (7):
                     mode_desc = "Override Inhibit Terminal Flag bit";
                     break;
-                case 8:
+                case (8):
                     mode_desc = "Reset";
                     break;
-                case 9:
+                case (9):
                     mode_desc = "RESERVED";
                     break;
-                case 10:
+                case (10):
                     mode_desc = "RESERVED";
                     break;
-                case 11:
+                case (11):
                     mode_desc = "RESERVED";
                     break;
-                case 12:
+                case (12):
                     mode_desc = "RESERVED";
                     break;
-                case 13:
+                case (13):
                     mode_desc = "RESERVED";
                     break;
-                case 14:
+                case (14):
                     mode_desc = "RESERVED";
                     break;
-                case 15:
+                case (15):
                     mode_desc = "RESERVED";
                     break;
-                case 16:
+                case (16):
                     mode_desc = "Transmit Vector Word";
                     break;
-                case 17:
+                case (17):
                     mode_desc = "Synchronize";
                     break;
-                case 18:
+                case (18):
                     mode_desc = "Transmit Last Command Word";
                     break;
-                case 19:
+                case (19):
                     mode_desc = "Transmit BIT Word";
                     break;
-                case 20:
+                case (20):
                     mode_desc = "Selected Transmitter Shutdown";
                     break;
-                case 21:
+                case (21):
                     mode_desc = "Override Selected Transmitter Shutdown";
                     break;
                 case (22):
