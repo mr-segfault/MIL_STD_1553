@@ -216,7 +216,7 @@ namespace MIL_STD_1553
                 Console.WriteLine("COMMAND WORD SENT.\n\n");
             if (wr_msg(0, 0, 0, 0, 0, 0, 0, 0, 0, 0x1f, 0, 0, 0, 1, 16025, 0, 2) == 0) 
                 Console.WriteLine("\nDATA WORD SENT\n");
-            if (wr_msg(0, 0, 0, 0, 0, 0, 0, 0, 0, 0x1f, 0, 0, 0, 1, 16050, 1, 2) == 0) 
+            if (wr_msg(0, 0, 0, 0, 0, 0, 0, 0, 0, 0x1f, 0, 0, 0, 1, 16050, 0, 2) == 0) 
                 Console.WriteLine("\nDATA WORD SENT\n");
             if (wr_msg(0, 0, 0, 0, 1, 0, 0, 0, 0, 0x1f, 0, 0, 0, 1, 0, 1, 3) == 0)
                 Console.WriteLine("\nSTATUS WORD SENT\n");
