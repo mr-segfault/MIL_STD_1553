@@ -13,7 +13,6 @@ namespace MIL_STD_1553
 {
     class encode
     {
-        public static int _ctr = 0;
         private static int frame_invalid = 0;
         static int wr_msg(int is_status, int message_error, int instrumentation, int service_request, int broadcast_cmd_received, int busy, int subsystem_flag, int dynamic_bus_acceptance, int terminal_flag, int address, int tr, int sub_address_mc, int wc_mc, int par, int data, int end_of_messages, int msg_type)
         {
@@ -34,7 +33,6 @@ namespace MIL_STD_1553
                 Console.WriteLine("DEBUG output: \nis_status: " + is_status + ", message_error: " + message_error + ", instrumentation: " + instrumentation + ", service_request: " + service_request + ", broadcast_cmd_reserved " + broadcast_cmd_received + ", busy: " + busy + ", subsystem_flag: " + subsystem_flag + ", dynamic_bus_acceptance: " + dynamic_bus_acceptance + ", terminal_flag: " + terminal_flag + ", address: " + address + ", tr: " + tr + ", sub_address_mc: " + sub_address_mc + ", wc_mc: " + wc_mc + ", par: " + par + ", data: " + data + ", end_of_messages: " + end_of_messages + ", msg_type: " + msg_type + "\n");
 
                 Console.WriteLine("===================================================");
-                encode._ctr++;
 
             }
             if (msg_type == DATA_TYPE)
@@ -45,7 +43,6 @@ namespace MIL_STD_1553
                 media.send_onto_media(data_word_binary);
                 Console.WriteLine("DEBUG output: \nis_status: " + is_status + ", message_error: " + message_error + ", instrumentation: " + instrumentation + ", service_request: " + service_request + ", broadcast_cmd_reserved " + broadcast_cmd_received + ", busy: " + busy + ", subsystem_flag: " + subsystem_flag + ", dynamic_bus_acceptance: " + dynamic_bus_acceptance + ", terminal_flag: " + terminal_flag + ", address: " + address + ", tr: " + tr + ", sub_address_mc: " + sub_address_mc + ", wc_mc: " + wc_mc + ", par: " + par + ", data: " + data + ", end_of_messages: " + end_of_messages + ", msg_type: " + msg_type + "\n");
                 Console.WriteLine("===================================================");
-                encode._ctr++;
 
             }
                         if (msg_type == STATUS_TYPE)
@@ -56,11 +53,10 @@ namespace MIL_STD_1553
                             media.send_onto_media(status_word_binary);
                             Console.WriteLine("DEBUG output: \nis_status: " + is_status + ", message_error: " + message_error + ", instrumentation: " + instrumentation + ", service_request: " + service_request + ", broadcast_cmd_reserved " + broadcast_cmd_received + ", busy: " + busy + ", subsystem_flag: " + subsystem_flag + ", dynamic_bus_acceptance: " + dynamic_bus_acceptance + ", terminal_flag: " + terminal_flag + ", address: " + address + ", tr: " + tr + ", sub_address_mc: " + sub_address_mc + ", wc_mc: " + wc_mc + ", par: " + par + ", data: " + data + ", end_of_messages: " + end_of_messages + ", msg_type: " + msg_type + "\n");
                             Console.WriteLine("===================================================");
-                            encode._ctr++;
 
                         }
+                        return 0;
 
-            return _ctr;
         }
         static void Main(string[] args)
         {
