@@ -28,7 +28,6 @@ namespace MIL_STD_1553
                 Console.WriteLine("===================================================");
                 string cmd_frame = cmd_word.frame_cmd_word(address, tr, sub_address_mc, wc_mc);
                 Console.WriteLine(cmd_frame);
-                Console.WriteLine("Placing message on the bus with message ID: " + encode._ctr);
                 media.send_onto_media(cmd_frame);
                 chk_valid.check_frame_correctness(address, tr);
                 bus_controller.message_address(address, sub_address_mc, wc_mc, tr);
