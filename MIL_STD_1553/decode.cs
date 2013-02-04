@@ -13,7 +13,7 @@ namespace MIL_STD_1553
         {
             if (frame.Length != 20)
             {
-                Console.WriteLine("Error: Invalid frame length! Frame length must be 20 bits including 3 preceding preamble bits");
+                Console.WriteLine("Error: Invalid frame length! Frame length must be 20 bits including 3 preceding preamble bits. eg. \"MIL_STD_1553 decode cmdword PPP01111111000000010\"");
                 return 1;
             }
             string address  = frame.Substring(3, 5);
@@ -40,7 +40,7 @@ namespace MIL_STD_1553
         {
             if (frame.Length != 20)
             {
-                Console.WriteLine("Error: Invalid frame length! Frame length must be 20 bits including 3 preceding preamble bits");
+                Console.WriteLine("Error: Invalid frame length! Frame length must be 20 bits including 3 preceding preamble bits. eg. \"MIL_STD_1553 decode cmdword PPP01111111000000010\"");
                 return 1;
             }
             string data_str = frame.Substring(3,16);
@@ -57,7 +57,7 @@ namespace MIL_STD_1553
         {
             if (frame.Length != 20)
             {
-                Console.WriteLine("Error: Invalid frame length! Frame length must be 20 bits including 3 preceding preamble bits");
+                Console.WriteLine("Error: Invalid frame length! Frame length must be 20 bits including 3 preceding preamble bits. eg. \"MIL_STD_1553 decode cmdword PPP01111111000000010\"");
                 return 1;
             }
             string address = frame.Substring(3, 5);
