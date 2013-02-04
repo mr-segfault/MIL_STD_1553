@@ -66,28 +66,38 @@ namespace MIL_STD_1553
             string msg_error_str = frame.Substring(8, 1);
             int msg_error = Convert.ToInt32(msg_error_str, 2);
 
+
             string instrumentation_str = frame.Substring(9, 1);
             int instrumentation = Convert.ToInt32(instrumentation_str, 2);
+
 
             string srvc_req_str = frame.Substring(10, 1);
             int srvc_req = Convert.ToInt32(srvc_req_str, 2);
 
-            string broadcast_cmd_rcvd_str = frame.Substring(10, 1);
+
+ //           string rsvd_string = frame.Substring(11, 3);
+ //           int rsvd = Convert.ToInt32(rsvd_string, 2);
+
+            string broadcast_cmd_rcvd_str = frame.Substring(14, 1);
             int broadcast_cmd_rcvd = Convert.ToInt32(broadcast_cmd_rcvd_str, 2);
 
-            string busy_str = frame.Substring(10, 1);
+
+            string busy_str = frame.Substring(15, 1);
             int busy = Convert.ToInt32(busy_str, 2);
 
-            string subsystem_str = frame.Substring(10, 1);
+            string subsystem_str = frame.Substring(16, 1);
             int subsystem = Convert.ToInt32(subsystem_str, 2);
 
-            string dyn_bus_accept_str = frame.Substring(10, 1);
+            string dyn_bus_accept_str = frame.Substring(17, 1);
             int dyn_bus_accept = Convert.ToInt32(dyn_bus_accept_str, 2);
+
+            string terminal_str = frame.Substring(18, 1);
+            int terminal = Convert.ToInt32(terminal_str, 2);
 
             string parity_str = frame.Substring(19, 1);
             par = Convert.ToInt32(parity_str, 2);
-            
-            encode.wr_msg(0, msg_error, instrumentation, srvc_req, broadcast_cmd_rcvd, busy, subsystem, dyn_bus_accept, 0, addy, 0, 0, 0, 0, 0, 3);
+            // set reserved (unused) words are omitted without notification in the decode
+            encode.wr_msg(0, msg_error, instrumentation, srvc_req, broadcast_cmd_rcvd, busy, subsystem, dyn_bus_accept, terminal, addy, 0, 0, 0, 0, 0, 3); 
             return 0;
         }
 

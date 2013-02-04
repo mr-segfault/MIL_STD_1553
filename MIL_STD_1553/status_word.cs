@@ -19,7 +19,6 @@ namespace MIL_STD_1553
         if (decode.par != par2)
             Console.WriteLine("Error: Calculated parity mismatch!");
 
-        
         return status_frame;
         }
     }
