@@ -11,10 +11,13 @@ namespace MIL_STD_1553
         public static string frame_data_word(int data)
         {
             string data_word = Convert.ToString(Convert.ToInt32(data), 2).PadLeft(16, '0');
-            int par = chk_valid.parity(data_word);
+            int par2 = chk_valid.parity(data_word);
             string data_frame = "PPP" + data_word;
-            data_frame += Convert.ToString(Convert.ToInt32(par), 2);
-            Console.WriteLine("PARITY = " + par);
+            data_frame += Convert.ToString(Convert.ToInt32(par2), 2);
+            Console.WriteLine("PARITY1 = {0} PARITY2 = {1}", decode.par, par2);
+            if (decode.par != par2)
+                Console.WriteLine("Error: Calculated parity mismatch!");
+
             return data_frame;
         }
     }

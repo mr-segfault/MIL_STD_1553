@@ -10,8 +10,9 @@ namespace MIL_STD_1553
     {
         public static int parity(string message)
         {
+
+            int par = 0;
             int par_ctr = 0;
-            int par=0;
             for (int i = 0; i < message.Length; i++)
             {
                 // ASCII "1" is '49'
@@ -34,7 +35,7 @@ namespace MIL_STD_1553
             }
             if ((address == 0x1F) && (tr == 1))
             {
-                Console.WriteLine("\nError: Invalid frame!: Broadcast frames are not commanded to x-mit on RT\n");
+//                Console.WriteLine("\nError: Invalid frame!: Broadcast frames are not commanded to x-mit on RT\n");
                 frame_invalid = 1;
             }
             return frame_invalid;
