@@ -14,7 +14,7 @@ namespace MIL_STD_1553
         string status_word = Convert.ToString(address, 2).PadLeft(5, '0') + Convert.ToString(message_error, 2) + Convert.ToString(instrumentation, 2) + Convert.ToString(service_request, 2) + "000" + Convert.ToString(broadcast_cmd_received, 2) + Convert.ToString(busy, 2) + Convert.ToString(subsystem_flag, 2) + Convert.ToString(dynamic_bus_acceptance, 2) + Convert.ToString(terminal_flag, 2);
         int par2 = chk_valid.parity(status_word);
         status_word += Convert.ToString(Convert.ToInt32(par2), 2);
-        string status_frame = "PPP" + status_word;
+        string status_frame = "STA" + status_word;
         Console.WriteLine("PARITY1 = {0} PARITY2 = {1}", decode.par, par2);
 
         if (decode.par != par2)

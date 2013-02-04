@@ -29,7 +29,7 @@ namespace MIL_STD_1553
             if (args.Length == 3)
             {
                 if (args[0] == "decode")
-                    // temporary cmdword decode until autodetection is working.
+                    // temporary cmdword decode until autodetection is working. Autodetection will require input of preamble specific to STATUS/COMMAND/DATA word type
                 {
                     if (args[1] == "cmdword")
                     {
