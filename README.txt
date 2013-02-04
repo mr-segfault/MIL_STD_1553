@@ -6,6 +6,14 @@ MIL-STD-1553 Encoder/Decoder v0.1
 by DoYouKnow
 ===============================================
 
+A decoder and encoder for the frame format of MIL-STD-1553 avionics and MIL-STD-1760E Avionics<->Carriage store communication in military aircraft.
+
+
+|PPP|0000000000000000|P
+Preamble   Word    Parity bit
+3-bits   16-bits    1-bit
+
+MIL-STD-1553 frame format
 
 C:\Users\Michael\Documents\Visual Studio 2012\Projects\MIL_STD_1553\MIL_STD_1553
 \bin\Debug>MIL_STD_1553 decode cmdword PPP01111110011000011

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Runtime.InteropServices;
 
 
 // SOURCE MAY BE MODIFIED AND DISTRIBUTED FREELY
@@ -13,8 +13,22 @@ namespace MIL_STD_1553
 {
     class main
     {
+
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern SafeFileHandle CreateNamedPipe(
+           String pipeName,
+           uint dwOpenMode,
+           uint dwPipeMode,
+           uint nMaxInstances,
+           uint nOutBufferSize,
+           uint nInBufferSize,
+           uint nDefaultTimeOut,
+           IntPtr lpSecurityAttributes);
+
         static void Main(string[] args)
         {
+
 
 
 //            if (encode.wr_msg(0, 0, 0, 0, 0, 0, 0, 0, 0, 0x1f, 0, 19, 0, 1, 0, 0, 1) == 0) 
