@@ -14,6 +14,7 @@ namespace MIL_STD_1553
         {
             try
             {
+                string todecode = "";
                 IPAddress ipAd = IPAddress.Parse("127.0.0.1");
                 // use local m/c IP address, and 
                 // use the same in the client
@@ -37,10 +38,11 @@ namespace MIL_STD_1553
                 Console.WriteLine("Recieved frame...");
                 var frame = System.Text.Encoding.Default.GetString(b);
                 for (int i = 0; i < k; i++)
-                {
-                    Console.Write(Convert.ToChar(b[i]));
-                    
-                }   
+ //               {
+        //            todecode[i] = (Convert.ToChar(b[i]));
+//                }
+                decode.cmdword_decode(Convert.ToString(b));
+
                 ASCIIEncoding asen = new ASCIIEncoding();
                 s.Send(asen.GetBytes("The string was recieved by the server."));
                 Console.WriteLine("\nSent Acknowledgement");
